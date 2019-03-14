@@ -1,0 +1,27 @@
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql:///tx-rabbitmq?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: tx-user1
+
+  rabbitmq:
+    host: 192.168.229.21
+    virtual-host: /
+    username: guest
+    password: guest
+    listener:
+      simple:
+        acknowledge-mode: manual
+    publisher-confirms: true
+    publisher-returns: true
+    template:
+          mandatory: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
