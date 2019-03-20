@@ -1,0 +1,8 @@
+datasources:
+  order:
+    url: jdbc:mysql:///testone?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+  customer:
+    url: jdbc:mysql:///testtwo?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+spring:
+  jpa:
+    open-in-view: true
