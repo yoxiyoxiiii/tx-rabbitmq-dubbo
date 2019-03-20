@@ -15,6 +15,7 @@ import org.springframework.context.annotation.ImportResource;
 public class TxUser1Application {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(TxUser1Application.class, args);
 	}
 
