@@ -31,11 +31,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!--jtp 分布式事务支持 强一致性-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jta-atomikos</artifactId>
-        </dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
