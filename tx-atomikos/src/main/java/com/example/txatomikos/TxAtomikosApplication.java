@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * Atomikos 适合 强一致性事务，并且是单进程下同时操作多个数据源的情况
+ * Atomikos 适合 强一致性事务，
+ * 并且是单进程下同时操作多个数据源的情况
  * 性能问题
+ * 读写锁 事务操作会阻塞，读取不会
  * */
 @SpringBootApplication(scanBasePackages = "com.example.txatomikos")
 @RestController
@@ -27,11 +29,11 @@ public class TxAtomikosApplication {
 	private CustomerService customerService;
 
 	@GetMapping
-	public boolean save() throws InterruptedException {
+	public Integer save() throws InterruptedException {
 		Customer customer = Customer.builder().age(10).name("xxxx").build();
 		Order build = Order.builder().code(4).quantity(5).build();
-		boolean customerAndOrder = customerService.saveCustomerAndOrder(customer, build);
-		return customerAndOrder;
+		Integer integer = customerService.saveCustomerAndOrder(customer, build);
+		return integer;
 	}
 
 	@GetMapping("get")

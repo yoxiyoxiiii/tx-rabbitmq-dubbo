@@ -5,7 +5,7 @@ import com.example.txatomikos.domain.order.Order;
 
 public interface CustomerService {
 
-    boolean saveCustomerAndOrder(Customer customer , Order order) throws InterruptedException;
+    Integer saveCustomerAndOrder(Customer customer , Order order) throws InterruptedException;
 
     String findById(int i);
 }

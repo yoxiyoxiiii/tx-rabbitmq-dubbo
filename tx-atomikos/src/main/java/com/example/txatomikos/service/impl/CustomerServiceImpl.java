@@ -19,11 +19,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public boolean saveCustomerAndOrder(Customer customer, Order order) throws InterruptedException {
-        Thread.sleep(30000);
-        customerRepository.save(customer);
+    public Integer saveCustomerAndOrder(Customer customer, Order order) throws InterruptedException {
+        Thread.sleep(3000);
+        Customer save = customerRepository.save(customer);
         orderRepository.save(order);
-        return true;
+        return save.getId();
     }
 
     @Override
